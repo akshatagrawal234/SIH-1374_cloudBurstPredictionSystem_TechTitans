@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            background-image: url(../static/input.jpg);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #333;
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function validateForm() {
+            // Get all input elements
+            var inputs = document.getElementsByClassName("input-field");
+
+            // Flag to track validation status
+            var valid = true;
+
+            // Iterate through the input fields and validate them
+            for (var i = 0; i < inputs.length; i++) {
+                var input = inputs[i];
+                var value = input.value.trim(); // Trim leading and trailing spaces
+
+                // Check if the input is empty
+                if (value === "") {
+                    alert("Please fill in all fields.");
+                    valid = false;
+                    break; // Stop validation on the first empty field
+                }
+
+                // You can add more specific validation logic for each input here
+                // For example, check if the value is a valid number, date, etc.
+            }
+
+            return valid; // If valid is true, the form will be submitted; otherwise, it won't.
+        }
+    </script>
+    <div class="container">
+        <h1>Weather Data</h1>
+        <form method="post" action="/predict"  onsubmit="return validateForm();">
+            <table>
+                <tr>
+                    <th>Feature</th>
+                    <th>Data</th>
+                </tr>
+                <tr>
+                    <td>Location</td>
+                    <td><input type="text" name="Location" class="input-field"></td>
+                </tr>
+                <tr>
+                    <td>Minimum Temperature</td>
+                    <td><input type="number" name="Minimum Temperature" min="0" max="50" class="input-field"></td>
+                </tr>
+                <tr>
+                    <td>Maximum Temperature</td>
+                    <td><input type="number" name="Maximum Temperature" class="input-field"></td>
+                </tr>
+                <tr>
+                    <td>Rainfall</td>
+                    <td><input type="number" name="Rainfall" class="input-field"></td>
+                </tr>
+                <tr>
+                    <td>Evaporation</td>
+                    <td><input type="text" name="Evaporation" class="input-field"></td>
+                </tr>
+                <tr>
+                    <td>Sunshine</td>
+                    <td><input type="text" name="Sunshine" class="input-field"></td>
+                </tr>
+                <tr>
+                    <td>Wind Gust 1</td>
+                    <td><input type="text" name="WindGust1" class="input-field"></td>
+                </tr>
+                <tr>
+                    <td>Wind Gust 2</td>
+                    <td><input type="text" name="WindGust2" class="input-field"></td>
+                </tr>
+                <tr>
+                    <td>Wind Direct 1</td>
+                    <td><input type="text" name="WindDirect1" class="input-field"></td>
+                </tr>
+                <tr>
+                    <td>Wind Direct 2</td>
+                    <td><input type="text" name="WindDirect2" class="input-field"></td>
+                </tr>
+                <tr>
+                    <td>Wind Speed 1</td>
+                    <td><input type="text" name="WindSpeed1" class="input-field"></td>
+                </tr>
+                <tr>
+                    <td>Wind Speed 2</td>
+                    <td><input type="text" name="WindSpeed2" class="input-field"></td>
+                </tr>
+                <tr>
+                    <td>Humidity 9am</td>
+                    <td><input type="text" name="Humidity9am" class="input-field"></td>
+                </tr>
+                <tr>
+                    <td>Humidity 3pm</td>
+                    <td><input type="text" name="Humidity3pm" class="input-field"></td>
+                </tr>
+                <tr>
+                    <td>Pressure 9am</td>
+                    <td><input type="text" name="Pressure9am" class="input-field"></td>
+                </tr>
+                <tr>
+                    <td>Pressure 3pm</td>
+                    <td><input type="text" name="Pressure3pm" class="input-field"></td>
+                </tr>
+                <tr>
+                    <td>Cloud 9am</td>
+                    <td><input type="text" name="Cloud9am" class="input-field"></td>
+                </tr>
+                <tr>
+                    <td>Cloud 3pm</td>
+                    <td><input type="text" name="Cloud3pm" class="input-field"></td>
+                </tr>
+                <tr>
+                    <td>Temperature 1</td>
+                    <td><input type="text" name="Temperature1" class="input-field"></td>
+                </tr>
+                <tr>
+                    <td>Temperature 2</td>
+                    <td><input type="text" name="Temperature2" class="input-field"></td>
+                </tr>
+                <tr>
+                    <td>Cloudburst today</td>
+                    <td><input type="text" name="cloudbursttoday" class="input-field"></td>
+                </tr>
+            </table>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+        </div>
+</body>
+</html>

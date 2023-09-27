@@ -1,0 +1,175 @@
+/* Reset some default styles */
+body, h1, h2, h3, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set a base font size and line height for better readability */
+body {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Add a background color and a background image */
+html {
+  background-color: #fff;
+  background-image: url("background.jpg");
+  opacity: 90%;
+}
+
+/* Style the navigation bar */
+.home {
+  list-style-type: none;
+  padding: 0;
+  overflow: hidden;
+  background-color: #4db4c3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.home li {
+  list-style: none;
+}
+
+.home li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.tech {
+  font-weight: bold;
+  font-size: 20px;
+  border: 2px solid rgb(202, 202, 213);
+  background-color: white;
+  background-image: url('back.jpeg');
+  opacity: 0.8;
+  color: rgb(224, 213, 213);
+  text-align: center;
+}
+
+/* Change the link color to #111 (black) on hover */
+.home li a:hover {
+  background-color: #e78421;
+}
+
+.caption {
+  opacity: 0.7;
+  font-size: 1.8rem;
+  word-spacing: 5px;
+  margin-right: 20px; /* Adjust margin-right to create space for the image */
+  display: inline-block; /* Add this line to make it inline with the image */
+}
+
+.image {
+  max-width: 100%;
+  height: auto;
+  display: inline-block; /* Add this line to make it inline with the caption */
+  vertical-align: top; /* Align the image to the top of the caption */
+}
+
+.Heading {
+  font-size: 2.4rem;
+  color: rgb(35, 35, 165);
+}
+
+/* Style the content */
+.content li {
+  list-style-type: none;
+  font-size: 1.6rem;
+  width: 60%;
+  margin-left: 50px;
+}
+
+.cloudburst {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-top: 0;
+}
+
+.benefits {
+  font-size: 1.4rem;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.purpose {
+  padding: 20px;
+  text-decoration: none;
+  text-shadow: 2px 2px #9b8d8d;
+  color: #c119a5;
+}
+
+.benefits h1 {
+  color: #1cc5ce;
+  text-shadow: 2px 2px #9b8d8d;
+}
+
+.benefits li {
+  font-size: 1.6rem;
+}
+
+/* Team section */
+.team {
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.team h1 {
+  color: #02512b;
+  font-size: 2.4rem;
+}
+
+.team ul li {
+  font-size: 1.6rem;
+}
+
+/* Add responsiveness using media queries */
+/* Your existing CSS code */
+
+/* Add responsiveness using media queries */
+@media screen and (max-width: 768px) {
+  .home {
+      flex-direction: column;
+  }
+
+  .caption {
+      margin-right: 0;
+  }
+
+  .image {
+      width: 100%; /* Adjust to your preference for smaller screens */
+      max-height: auto;
+      display: block; /* Restore to block display for smaller screens */
+      margin: 0 auto; /* Center the image */
+  }
+
+  .team {
+      margin: 0;
+  }
+}
+/* Style the Next Page button */
+/* Style the Next Page button */
+.next-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color:#ff8c00;
+  color: white;
+  font-size: 1.6rem;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1;
+}
+
+.next-button:hover {
+  background-color: #4ce9d2;
+}
